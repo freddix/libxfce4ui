@@ -3,7 +3,7 @@
 Summary:	Various GTK+ widgets for Xfce
 Name:		libxfce4ui
 Version:	4.10.0
-Release:	1
+Release:	2
 License:	LGPL v2
 Group:		Libraries
 Source0:	http://archive.xfce.org/src/xfce/libxfce4ui/4.10/%{name}-%{version}.tar.bz2
@@ -96,8 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
-rm -f $RPM_BUILD_ROOT%{_libdir}/*/*/*.la
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{tl_PH,ur_PK}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name}
 
